@@ -2,7 +2,6 @@
 class Stack():
   '''
   This class implements the classic stack data structure using python lists.
-  Methods implemented are  push() and pop()
   Stacks operate on a LIFO basis (Last In First Out)
   '''
   def __init__(self, maxLimit = 3):
