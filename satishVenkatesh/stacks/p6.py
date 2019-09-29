@@ -51,4 +51,4 @@ if __name__ == '__main__':
   print(check_palindrome('madam'))
   print(check_palindrome('12321'))
   print(check_palindrome('nurses run'))
-  print(check_palindrome('nursesrun'))
+  print(check_palindrome('nurserun'))
