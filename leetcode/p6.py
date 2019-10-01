@@ -19,6 +19,7 @@ class Solution(object):
 		:type s: str
 		:rtype: int
 		"""
+		# assert isinstance (s, str) and len(s) >= 0
 		s = list(s)
 		intNumber = 0
 		lastRoman = ''
