@@ -1,4 +1,4 @@
-# ----------------------- UNSOLVED ----------------------- 
+# ----------------------- UNSOLVED ----------------------- 314 / 315 test cases passed.
 # @author: adnan
 # Problem 42. Trapping Rain Water
 class Solution(object):
