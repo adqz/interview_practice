@@ -1,5 +1,9 @@
 # @author: adnan
 # 921. Minimum Add to Make Parentheses Valid (Medium)
+'''
+Runtime: 16 ms, faster than 84.98% of Python online submissions for Minimum Add to Make Parentheses Valid.
+Memory Usage: 12 MB, less than 20.00% of Python online submissions for Minimum Add to Make Parentheses Valid.
+'''
 class Solution(object):
     def minAddToMakeValid(self, S):
         """
