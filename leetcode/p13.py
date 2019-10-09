@@ -1,6 +1,6 @@
 # ----------------------- UNSOLVED -----------------------
 # @author: adnan
-# Problem No. 18. 4Sum
+# Problem No. 18. 4Sum (Medium)
 import itertools as it
 class Solution:
     def fourSum(self, nums, target):
