@@ -3,3 +3,8 @@ reverseString/.pytest_cache/
 
 reverseInt/__pycache__/
 reverseInt/.pytest_cache/
+
+fizzBuzz/__pycache__/
+fizzBuzz/.pytest_cache/
+
+.pytest_cache
