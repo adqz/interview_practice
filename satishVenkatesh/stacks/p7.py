@@ -34,10 +34,9 @@ class Stack():
   def isEmpty(self):
     return self.size() == 0
 
-def reverseStackRecursive(stack1):
+def reverseStack(stack1):
   '''
-  Checks whether a given string is a palindrome or not using stacks.
-  Can also be done using lists
+  Reverses a given stack using loop
   '''
   assert isinstance(stack1, Stack)
   reversedStack = Stack(maxLimit=stack1.size())
@@ -45,8 +44,17 @@ def reverseStackRecursive(stack1):
     reversedStack.push(stack1.pop())
   return reversedStack
 
+def reverseStackRecursively(stack, newStack = Stack()):
+  '''
+  Reverses a given stack using recursion
+  '''
+  if not(stack.isEmpty()):
+    newStack.push(stack.pop())
+    reverseStackRecursively(stack, newStack)
+  return newStack
 
 def createStackFromString(s):
+  'Creates a stack from string while maintaining order of the string'
   assert isinstance(s, str)
   stack = Stack(maxLimit=len(s))
   for char in s:
@@ -55,4 +63,5 @@ def createStackFromString(s):
 
 if __name__ == '__main__':
   s1 = createStackFromString('abcd')
-  print(reverseStackRecursive(s1))
+  print(reverseStack(s1))
+  print(reverseStackRecursively(s1))
