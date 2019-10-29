@@ -7,4 +7,6 @@ class TestClass():
     assert reverse('abcd') == 'dcba'
   def test_two(self):
     assert reverse('  abcd') == 'dcba  '
+  def test_three(self):
+    assert len(reverse.__doc__)
     
