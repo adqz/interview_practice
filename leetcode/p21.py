@@ -1,4 +1,6 @@
 '''
+@author: adnan
+Problem No. 26 (Easy)
 Runtime: 84 ms, faster than 26.42% of Python online submissions for Remove Duplicates from Sorted Array.
 Memory Usage: 13.6 MB, less than 64.06% of Python online submissions for Remove Duplicates from Sorted Array.
 '''

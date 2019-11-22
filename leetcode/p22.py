@@ -1,4 +1,6 @@
 '''
+@author: adnan
+Problem No. 27 (Easy)
 Runtime: 12 ms, faster than 97.05% of Python online submissions for Remove Element.
 Memory Usage: 11.8 MB, less than 32.08% of Python online submissions for Remove Element.
 '''
