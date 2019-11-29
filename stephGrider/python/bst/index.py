@@ -28,6 +28,22 @@ class Node:
     elif (val > self.data):
       return None
   
+  def validate(self, Max=None, Min=None):
+
+    if Max != None and self.data > Max:
+      return False
+    if Min != None and self.data < Min:
+      return False
+    if self.left and not(self.left.validate(Max=self.data, Min=Min)):
+      return False
+    if self.right and not(self.right.validate(Max=Max, Min=self.data)):
+      return False
+    
+    return True
+      
+      
+        
+  
 def printBST(node):
   buffer = [node]
   while buffer:
@@ -48,6 +64,11 @@ if __name__ == '__main__':
   n1.insert(13)
   n1.insert(-12)
   n1.insert(43)
+  n1.insert(11)
+  n1.insert(4)
   printBST(n1)
-  check = n1.contain(44)
+  check = n1.contain(43)
   print('it exists = ',check)
+  print(n1.validate())
+  n1.left.left.right = Node(14)
+  print(n1.validate())
