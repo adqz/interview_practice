@@ -31,8 +31,21 @@ class Solution:
       ans.append(level)
     return ans[::-1]
 
+def deserialize(string):
+    if string == '{}':
+        return None
+    nodes = [None if val == 'null' else TreeNode(int(val))
+             for val in string.strip('[]{}').split(',')]
+    kids = nodes[::-1]
+    root = kids.pop()
+    for node in nodes:
+        if node:
+            if kids: node.left  = kids.pop()
+            if kids: node.right = kids.pop()
+    return root
+
 if __name__ == '__main__':
   sol = Solution()
-  nums = [3,9,20,None,None,15,7]
+  root = deserialize('[3,9,20,null,null,15,7]')
   ans = sol.levelOrderBottom(root)
   print(ans)

@@ -23,7 +23,6 @@ class Solution:
     while buffer:
       level = []
       len_buffer = len(buffer)
-      print(buffer)
       for i in range(len_buffer):
         node = buffer.pop(0)
         level.append(node.val)
@@ -32,8 +31,21 @@ class Solution:
       ans.append(level)
     return ans
 
+def deserialize(string):
+    if string == '{}':
+        return None
+    nodes = [None if val == 'null' else TreeNode(int(val))
+             for val in string.strip('[]{}').split(',')]
+    kids = nodes[::-1]
+    root = kids.pop()
+    for node in nodes:
+        if node:
+            if kids: node.left  = kids.pop()
+            if kids: node.right = kids.pop()
+    return root
+
 if __name__ == '__main__':
   sol = Solution()
-  nums = [3,9,20,None,None,15,7]
+  root = deserialize('[3,9,20,null,null,15,7]')
   ans = sol.levelOrder(root)
   print(ans)
