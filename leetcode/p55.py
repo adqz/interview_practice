@@ -1,3 +1,10 @@
+'''
+@author: adnan
+Problem 817. Linked List Components (Meidum)
+
+Runtime: 100 ms, faster than 96.96% of Python3 online submissions for Linked List Components.
+Memory Usage: 17.4 MB, less than 75.00% of Python3 online submissions for Linked List Components.
+'''
 from typing import List
 # Definition for singly-linked list.
 class ListNode:
