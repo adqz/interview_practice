@@ -3,6 +3,7 @@
 Problem 697. Degree of an Array (Easy)
 
 Time Limit exceeded. Try again
+Memory Limit exceeded. Try again
 '''
 from collections import Counter
 from typing import List
