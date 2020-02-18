@@ -1,37 +1,20 @@
-# ----------------------- UNSOLVED ----------------------- 314 / 315 test cases passed.
 # @author: adnan
 # Problem 42. Trapping Rain Water
-class Solution(object):
-    def trap(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        assert isinstance(height, list) and len(height) > 0
-        assert all( isinstance(el, int) and el>=0 for el in height ), 'Invalid heightuence'
-
-        totalVolume = 0
-
-        for i in range(len(height)):
-            currWall = height[i]
-            leftCheck = any(currWall < wall for wall in height[:i]) #checkingi if any wall to the left is greater than current walls height
-            rightCheck = any(currWall < wall for wall in height[i+1:]) #checkingi if any wall to the right is greater than current walls height
-            canHoldWater = leftCheck and rightCheck #current wall can hold water if there are walls on either side greater in height
-            # print('leftCheck, rightCheck, canHoldWater = ', leftCheck, rightCheck, canHoldWater)
-            if canHoldWater:
-                maxHeightLeft = max(height[:i])
-                maxHeightRight = max(height[i+1:])
-
-                for rightWall in height[i+1:]:
-                    if rightWall >= maxHeightLeft:
-                        maxHeightRight = rightWall
-                        break;
-
-                currVolume = min(maxHeightRight, maxHeightLeft) - currWall
-                # print('maxHeightLeft, maxHeightRight, currWall, currVolume = ', maxHeightLeft, maxHeightRight, currWall, currVolume)
-                totalVolume += currVolume
-        print(totalVolume)
-        return totalVolume
+from typing import List
+class Solution:
+  def trap(self, height: List[int]) -> int:
+    max_left = list([0])
+    max_right = list([0])
+    for i in range(len(height)):
+      max_left.append(max(max_left[-1], height[i]))
+      max_right.append(max(max_right[-1], height[len(height)-i-1]))
+    max_left = max_left[1:]
+    max_right = max_right[1:][::-1]
+    
+    totalWater = 0
+    for i in range(len(height)):
+      totalWater += min(max_left[i], max_right[i]) - height[i]
+    return totalWater
 
 if __name__ == '__main__':
   # ------ Test Cases ------

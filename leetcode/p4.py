@@ -10,22 +10,9 @@ class ListNode(object):
         return str(self.val) +'->'+ str(self.next)
 
 class Solution(object):
-    '''
-    You are given two non-empty linked lists representing two non-negative integers. 
-    The digits are stored in reverse order and each of their nodes contain a single digit. 
-    Add the two numbers and return it as a linked list.
-
-    You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-    '''
     def addTwoNumbers(self, l1, l2, carry = 0):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
         value = l1.val + l2.val + carry
         carry = value // 10
-        # print('value, value%10, carry = ', value, value%10, carry)
         newNode = ListNode(value%10)
 
         if (l1.next != None or l2.next != None or carry!=0):
@@ -34,7 +21,7 @@ class Solution(object):
             if not(l2.next):
                 l2.next = ListNode(0)
             newNode.next = self.addTwoNumbers(l1.next, l2.next, carry)
-        # print(newNode)
+
         return newNode
 
 
