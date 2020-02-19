@@ -4,11 +4,6 @@
 import itertools as it
 class Solution:
     def fourSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[List[int]]
-        """
         d = dict()
         for i in range(len(nums)):
           for j in range(i+1, len(nums)):
@@ -23,10 +18,8 @@ class Solution:
           diff = target - key
           if diff in d:
             list1, list2 = d[key], d[diff]
-            # print(list1,list2)
             for (i,j) in list1:
               for (k,l) in list2:
-                # print(i,j,k,l)
                 if i!=k and i!=j and j!=k and j!=l:
                   combo = [nums[i], nums[j], nums[k], nums[l]]
                   combo.sort()
