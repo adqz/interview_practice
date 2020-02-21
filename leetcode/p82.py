@@ -1,6 +1,6 @@
 '''
 @author: adnan
-Problem 151. Reverse Words in a String
+Problem 151. Reverse Words in a String (Medium)
 
 Runtime: 268 ms, faster than 12.75% of Python3 online submissions for Design Twitter.
 Memory Usage: 18.1 MB, less than 52.63% of Python3 online submissions for Design Twitter.
