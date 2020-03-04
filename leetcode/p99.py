@@ -1,4 +1,7 @@
 '''
+@author: adnan
+Problem 383. Ransom Note (Easy)
+
 Runtime: 44 ms, faster than 79.89% of Python3 online submissions for Ransom Note.
 Memory Usage: 12.7 MB, less than 100.00% of Python3 online submissions for Ransom Note.
 '''
