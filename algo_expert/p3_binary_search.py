@@ -1,3 +1,4 @@
+# O(logn) time | O(1) Space
 def binary_search(arr, key):
     l, r = 0, len(arr)-1
     while l+1 < r:
@@ -15,6 +16,7 @@ def binary_search(arr, key):
 
     return -1 #if not found
 
+# O(logn) time | O(logn) Space
 def binary_search_recursive(arr, key, low, high):
     # Base case 1
     if low > high:
