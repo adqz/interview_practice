@@ -1,3 +1,4 @@
+# O(logn) time | O(1) Space
 def isPalindrome(string):
     l, r = 0, len(string) - 1
     while l < r:

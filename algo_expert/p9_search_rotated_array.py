@@ -1,3 +1,4 @@
+# O(logn) time | O(1) Space
 def binary_search_rotated(arr, key):
     l, r = 0, len(arr)-1
 
@@ -15,9 +16,12 @@ def binary_search_rotated(arr, key):
         # Check if arr from [l,r] is sorted but key is greater than right end
         elif arr[l] <= arr[mid] <= arr[r] and key > arr[r]:
             l = mid
-        # If right end is less than mid, which is unusal
+        # At this point key > arr[mid] but then the right most element is less than
+        # the middle element, so we set left to mid
         elif arr[r] <= arr[mid]:
             l = mid
+        # At this point key < arr[mid] but then the left most element is greater than
+        # the middle element, so we set right to mid
         elif arr[l] >= arr[mid]:
             r = mid
 

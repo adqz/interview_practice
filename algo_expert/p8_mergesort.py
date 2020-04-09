@@ -1,4 +1,5 @@
 from collections import deque
+# Best, Avg, Worst --> O(logn) time | O(logn) space
 def mergeSort(array):
     if not array:
         return []

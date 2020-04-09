@@ -4,7 +4,7 @@ class AncestralTree:
         self.name = name
         self.ancestor = None
 
-
+# O(max(d1,d2)) time | O(1) space, d1, d2 = depth of two nodes 1 and 2
 def getYoungestCommonAncestor(topAncestor, descendantOne, descendantTwo):
     # Edge case
     if descendantOne.name == descendantTwo.name:

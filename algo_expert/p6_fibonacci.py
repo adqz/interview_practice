@@ -1,3 +1,4 @@
+# O(n) time | O(n) Space
 cache = dict()
 def getNthFib(n):
 
