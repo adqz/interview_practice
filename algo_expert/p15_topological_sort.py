@@ -1,3 +1,4 @@
+# O(j+d) time | O(j+d) space, where j and d are number of jobs and dependencies.
 def topologicalSort(jobs, deps):
     jobGraph = createJobGraph(jobs, deps)
     return getTopologicalOrder(jobGraph)
