@@ -1,5 +1,6 @@
+# O(n) time | O(h) space, where h is height of binary tree
 def inorder_iterative(root):
-    in_order_stack = []
+    result = ""
     stack = []
     node = root
     while len(stack) != 0 or node != None:
@@ -9,8 +10,6 @@ def inorder_iterative(root):
             continue
         
         curr_node = stack.pop()
-        in_order_stack.append(curr_node.data)
+        result += str(curr_node.data) + " "
         node = curr_node.right
-
-    result = ' '.join(map(in_order_stack, str))
     return result
