@@ -1,3 +1,4 @@
+# O(n) time | O(1) space
 def reverse(head):
     node = head
     if node.next == None:
@@ -20,5 +21,5 @@ def reverse(head):
         next_node = node.next
         node.next = prev_node
         next_node.next = node
-    
+
     return next_node

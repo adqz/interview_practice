@@ -2,6 +2,8 @@
 # for the depthFirstSearch method.
 # Feel free to add new properties
 # and methods to the class.
+
+# O(V+E) time | O(V) space, where V,E = number of vertices and edges
 class Node:
     def __init__(self, name):
         self.children = []

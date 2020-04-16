@@ -26,6 +26,7 @@ def print_linked_list(head):
         curr = curr.next
     print('None')
 
+# O(n) time | O(1) space
 def remove_duplicates(head):
 
     if head == None:
