@@ -1,16 +1,12 @@
-def inorder_successor_bst(root, d, parent=None, parent_of_parent=None):
+def inorder_successor_bst(root, d, successor=None):
     if not root:
         return None
     
-    if d == root.data and root.right:
+    if root.data == d and root.right:
         return root.right
-    elif d == root.data and d < parent.data:
-        return parent
-    elif d == root.data and d > parent.data:
-        return parent_of_parent
-    
+    if root.data == d:
+        return successor
     elif d < root.data:
-        return inorder_successor_bst(root.left, d, root, parent)
+        return inorder_successor_bst(root.left, d, root.data)
     elif d > root.data:
-        return inorder_successor_bst(root.right, d, root, parent)
-    
+        return inorder_successor_bst(root.right, d, successor)
