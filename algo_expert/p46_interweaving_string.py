@@ -3,24 +3,21 @@ def interweavingStrings(one, two, three):
     if len(one) + len(two) != len(three):
         return False
     
-    # Build count dictionary
-    character_count = dict()
-    for char in one:
-        if char not in character_count:
-            character_count[char] = 0
-        character_count[char] += 1
-    for char in two:
-        if char not in character_count:
-            character_count[char] = 0
-        character_count[char] += 1
-    
-    for char in three:
-        if char not in character_count:
+    i, j = 0, 0
+    for k in range(len(three)):
+        if i < len(one) and three[k] == one[i]:
+            i += 1
+        elif j < len(two) and three[k] == two[j]:
+            j += 1
+        else:
             return False
-        character_count[char] -= 1
-    
-    for char, count in character_count.items():
-        if count != 0:
-            return False
+    if (i != len(one)) or (j != len(two)):
+        return False
     
     return True
+
+if __name__ == "__main__":
+    one   = 'aabcc'
+    two   = 'dbbca'
+    three = 'aadbbcbcac'
+    print(interweavingStrings(one, two, three))
