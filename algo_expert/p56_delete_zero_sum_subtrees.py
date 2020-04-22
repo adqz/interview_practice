@@ -1,42 +1,29 @@
-def delete_zero_sum_subtree(root1):
-    root2 = create_tree_dfs(root1)
-    root3 = remove_zerosum_subtrees(root2, root1)
+def delete_zero_sum_subtree(root):
+    post_order_traverse_dfs(root, None, dir='None')
+    return root
 
-    return root3
-def remove_zerosum_subtrees(node, original_tree):
-    # Base
+def post_order_traverse_dfs(node, parent, dir):
     if node is None:
         return node
-
-    if node.left and node.left.data == 0:
-        original_tree.left = None
-        return remove_zerosum_subtrees(node.right, original_tree.right)
-
-    if node.right and node.right.data == 0:
-        original_tree.right = None
-        return remove_zerosum_subtrees(node.left, original_tree.left)
-    
-    return original_tree
-
-def create_tree_dfs(node):
     # Base
     if is_leaf(node):
-        return node
+        return node.data
 
     # Build
+    value_left, value_right = 0, 0
     if node.left:
-        left_node = create_tree_dfs(node.left)
+        value_left = post_order_traverse_dfs(node.left, node, dir='left')
     if node.right:
-        right_node = create_tree_dfs(node.right)
-    # Overwrite current nodes value
-    if left_node and right_node:
-        node.data += left_node.data + right_node.data
-    elif left_node:
-        node.data += left_node.data
-    elif right_node:
-        node.data += right_node.data
-
-    return node
+        value_right = post_order_traverse_dfs(node.right, node, dir='right')
+    
+    subtree_sum = node.data + value_left + value_right
+    if subtree_sum == 0:
+        if dir == 'left':
+            parent.left = None
+        elif dir == 'right':
+            parent.right = None
+    
+    return subtree_sum
 
 def is_leaf(node):
     if node.left is None and node.right is None:
