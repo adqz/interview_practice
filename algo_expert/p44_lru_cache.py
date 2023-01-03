@@ -138,9 +138,8 @@ class LRUCache:
 
     # O(1) time | O(1) space
     def evictLeastRecentKey(self):
-        tail = self.doublyLinkedList.tail
-        keyToRemove = tail.key
-        self.doublyLinkedList.remove(tail)
+        keyToRemove = self.doublyLinkedList.tail.key
+        self.doublyLinkedList.remove(self.doublyLinkedList.tail)
         del self.cache[keyToRemove]
     
     # O(1) time | O(1) space
